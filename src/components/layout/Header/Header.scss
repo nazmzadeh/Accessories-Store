@@ -1,4 +1,4 @@
-@import "../../assets/variables";
+@import "../../../assets/variables";
 .top-header {
   background-color: $main_bg_color;
   font-weight: 500;
@@ -66,26 +66,29 @@
   padding: 17px 12px;
 }
 
-.nav-row {
+.nav-row.row {
   justify-content: space-between;
   .nav-right {
     display: flex;
     gap: 15px;
-    button.drawer-btn {
-      padding: 0;
-      background-color: transparent;
+  }
+  button.drawer-btn {
+    padding: 0;
+    background-color: transparent;
+    border: 0;
+    box-shadow: none;
+    height: auto;
+    &:focus,
+    &:focus-visible,
+    &:hover {
       border: 0;
-      &:focus,
-      &:focus-visible,
-      &:hover {
-        border: 0;
-        color: $main_text_color;
-        outline: 0;
-        opacity: 0.7;
-      }
+      color: $main_text_color;
+      outline: 0;
+      opacity: 0.7;
     }
   }
 }
+
 .bottom-header {
   .browse {
     background-color: $main_text_color;
@@ -159,9 +162,18 @@
     width: 25px;
   }
 }
-.ant-drawer-close{
+.ant-drawer-close {
   padding: 0;
 }
+.ant-drawer {
+  .ant-drawer-body {
+    padding: 10px;
+  }
+  .ant-drawer-header {
+    padding: 16px 14px;
+  }
+}
+
 .ant-dropdown-menu-item {
   padding: 10px 20px !important;
   justify-content: space-between;

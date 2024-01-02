@@ -1,0 +1,12 @@
+{
+  "currencies": [
+    {
+      "label": "(<a rel=\"noopener noreferrer\" href=\"#\"> USD</a>)",
+      "key": "0"
+    },
+    {
+      "label": "(<a rel=\"noopener noreferrer\" href=\"#\">EUR</a>",
+      "key": "1"
+    }
+  ]
+}

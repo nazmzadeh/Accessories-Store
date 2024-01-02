@@ -1,10 +1,10 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import type { MenuProps } from "antd";
-import { Button, Menu } from "antd";
+import { Button, Drawer, Menu } from "antd";
 import { useEffect, useState } from "react";
 import "./Navbar.scss";
 import { useContext } from "react";
-import { CloseOutlined, MenuOutlined } from "@ant-design/icons";
+import { CloseOutlined, MenuOutlined, MobileOutlined } from "@ant-design/icons";
 import { MobileNavContext } from "../../../../context/ContextProvider";
 const items: MenuProps["items"] = [
   {
@@ -66,29 +66,23 @@ const items: MenuProps["items"] = [
 
 const Navbar = () => {
   const [current, setCurrent] = useState("home");
-  const [collapsed, setCollapsed] = useState(false);
-  const { mobile, setMobile } = useContext(MobileNavContext);
+  const { mobile, setMobile, toggleNavDrawer, openNav } =
+    useContext(MobileNavContext);
   const onClick: MenuProps["onClick"] = (e) => {
     setCurrent(e.key);
   };
-  const toggleCollapsed = () => {
-    setCollapsed(!collapsed);
-  };
+
   const handleResize = () => {
     if (window.innerWidth < 820) {
-      setCollapsed(true);
       setMobile(true);
     } else {
-      setCollapsed(false);
       setMobile(false);
     }
   };
   useEffect(() => {
     if (window.innerWidth < 820) {
-      setCollapsed(true);
       setMobile(true);
     } else {
-      setCollapsed(false);
       setMobile(false);
     }
   }, []);
@@ -99,25 +93,33 @@ const Navbar = () => {
 
   return (
     <div className="navbar-menu-container">
-      {mobile && (
-        <Button
-          onClick={toggleCollapsed}
-          style={{ marginBottom: 16 }}
-          id="collapse-btn"
-        >
-          {collapsed ? <MenuOutlined /> : <CloseOutlined />}
-        </Button>
+      {mobile ? (
+        <>
+          <Button
+            onClick={toggleNavDrawer}
+            className="drawer-btn nav-drawer-btn"
+          >
+            <MenuOutlined />
+          </Button>
+          <Drawer placement="left" open={openNav} onClose={toggleNavDrawer}>
+            <Menu
+              onClick={onClick}
+              selectedKeys={[current]}
+              mode="inline"
+              items={items}
+              className="navbar-menu navbar-menu-mobile"
+            />
+          </Drawer>
+        </>
+      ) : (
+        <Menu
+          onClick={onClick}
+          selectedKeys={[current]}
+          mode="horizontal"
+          items={items}
+          className="navbar-menu"
+        />
       )}
-
-      <Menu
-        onClick={onClick}
-        selectedKeys={[current]}
-        mode={mobile ? "inline" : "horizontal"}
-        items={items}
-        className={`navbar-menu ${mobile && "navbar-menu-mobile"} ${
-          collapsed && "navbar-menu-hidden"
-        }`}
-      />
     </div>
   );
 };

@@ -53,18 +53,16 @@ ul.ant-menu-item-group-list {
     transition: 0.8s max-width, 1s opacity;
   }
 
-  #collapse-btn {
-    border: 0;
+  button.nav-drawer-btn.drawer-btn {
     outline: none;
     margin-bottom: 6px;
+    padding: 10px;
     &:focus {
       border: 0;
       outline: none;
-      border-color: $selected_nav;
     }
     &:hover {
       color: $selected_nav;
-      border-color: $selected_nav;
     }
   }
 }

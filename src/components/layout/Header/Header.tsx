@@ -14,7 +14,6 @@ import { MobileNavContext } from "../../../context/ContextProvider";
 import SelectOption from "../../Select/Select";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { Category, ISearchValues } from "../../../types";
-import Icon from "@ant-design/icons";
 import { Button, Drawer } from "antd";
 
 const currencies: IMenuItemProps[] = [
@@ -194,15 +193,7 @@ const searchCategories: Category[] = [
   },
 ];
 const Header = () => {
-  const { mobile, setMobile } = useContext(MobileNavContext);
-  const [open, setOpen] = useState(false);
-  const showDrawer = () => {
-    setOpen(true);
-  };
-
-  const onClose = () => {
-    setOpen(false);
-  };
+  const { mobile, openSearch, toggleSearchDrawer } = useContext(MobileNavContext);
 
   const { register, handleSubmit } = useForm<ISearchValues>({
     defaultValues: {
@@ -325,7 +316,7 @@ const Header = () => {
             <ul className="nav-right">
               {mobile && (
                 <li>
-                  <Button onClick={showDrawer} className="drawer-btn">
+                  <Button onClick={toggleSearchDrawer} className="drawer-btn">
                     <svg
                       aria-hidden="true"
                       role="img"
@@ -455,8 +446,8 @@ const Header = () => {
               <Drawer
                 title="Search product"
                 placement="right"
-                onClose={onClose}
-                open={open}
+                open={openSearch}
+                onClose={toggleSearchDrawer}
               >
                 <form
                   method="get"

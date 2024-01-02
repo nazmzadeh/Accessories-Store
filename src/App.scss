@@ -1,0 +1,9 @@
+@import "./assets/mixins";
+.container {
+  @include container(0px, 5px 10px, 100%);
+  @include container(1200px, 5px 10px, 1200px);
+}
+.row {
+  display: flex;
+  align-items: center;
+}

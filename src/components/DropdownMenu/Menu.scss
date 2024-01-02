@@ -1,0 +1,21 @@
+@import "../../assets/variables";
+
+li.ant-dropdown-menu-item:not(li.ant-dropdown-menu-item:last-child) {
+  border-bottom: 1px solid $border_color;
+  border-radius: 0;
+}
+.down-arrow {
+  font-size: 0.7em;
+}
+.dropdown,
+.dropdown:hover {
+  color: black;
+  cursor: pointer;
+}
+li.ant-dropdown-menu-item-selected {
+  color: black !important;
+  background-color: rgba(0, 0, 0, 0.04) !important;
+}
+li.ant-dropdown-menu-item-selected a {
+  font-weight: 700;
+}

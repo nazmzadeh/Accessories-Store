@@ -117,7 +117,7 @@ const Navbar = () => {
           selectedKeys={[current]}
           mode="horizontal"
           items={items}
-          className="navbar-menu"
+          className="navbar-menu" 
         />
       )}
     </div>

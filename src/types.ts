@@ -19,3 +19,11 @@ export interface ISearchValues {
     productName: string;
     category: Category;
 }
+
+export interface IHeroCarouselSlide {
+    id:number;
+    image: string;
+    heading: string;
+    beforeDescription: string;
+    description: string;
+}

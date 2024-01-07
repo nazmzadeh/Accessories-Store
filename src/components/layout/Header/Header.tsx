@@ -15,6 +15,8 @@ import SelectOption from "../../Select/Select";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { Category, ISearchValues } from "../../../types";
 import { Button, Drawer } from "antd";
+// import data from "../../data/data.json";
+// const { categories, searchCategories, languages, currencies } = data;
 
 const currencies: IMenuItemProps[] = [
   {
@@ -64,79 +66,54 @@ const categories: IMenuItemProps[] = [
   {
     label: (
       <a rel="noopener noreferrer" href="#">
-        Audio & Speakers
+        Camera & Photo
       </a>
-    ),
-    icon: (
-      <svg viewBox="0 0 32 32">
-        <path d="M29.6 24.045c-0.442 0-0.8-0.358-0.8-0.8v-5.645c0-8.134-4.666-12.8-12.8-12.8s-12.8 4.666-12.8 12.8v5.645c0 0.442-0.358 0.8-0.8 0.8s-0.8-0.358-0.8-0.8v-5.645c0-2.422 0.379-4.598 1.126-6.472 0.712-1.786 1.763-3.309 3.125-4.525 2.491-2.227 6-3.403 10.15-3.403s7.659 1.178 10.15 3.403c1.36 1.216 2.411 2.739 3.125 4.525 0.747 1.872 1.126 4.050 1.126 6.472v5.645c0 0.442-0.358 0.8-0.8 0.8zM10.4 16c-1.051 0-1.946 0.678-2.269 1.621-1.765 0.109-3.030 0.662-3.854 1.683-0.734 0.912-1.077 2.15-1.077 3.896s0.342 2.984 1.077 3.896c0.824 1.022 2.088 1.574 3.854 1.683 0.325 0.942 1.219 1.621 2.269 1.621 1.323 0 2.4-1.077 2.4-2.4v-9.6c0-1.323-1.077-2.4-2.4-2.4zM4.8 23.2c0-2.258 0.56-3.73 3.2-3.966v7.933c-2.64-0.237-3.2-1.709-3.2-3.966zM11.2 28c0 0.442-0.358 0.8-0.8 0.8s-0.8-0.358-0.8-0.8v-9.6c0-0.442 0.358-0.8 0.8-0.8s0.8 0.358 0.8 0.8v9.6zM27.723 19.304c-0.824-1.022-2.088-1.574-3.853-1.683-0.325-0.942-1.219-1.621-2.269-1.621-1.323 0-2.4 1.077-2.4 2.4v9.6c0 1.323 1.077 2.4 2.4 2.4 1.051 0 1.946-0.678 2.269-1.621 1.765-0.109 3.030-0.662 3.853-1.683 0.734-0.912 1.077-2.15 1.077-3.896s-0.342-2.984-1.077-3.896zM21.6 28.8c-0.442 0-0.8-0.358-0.8-0.8v-9.6c0-0.442 0.358-0.8 0.8-0.8s0.8 0.358 0.8 0.8v9.6c0 0.442-0.358 0.8-0.8 0.8zM24 27.166v-7.933c2.64 0.237 3.2 1.709 3.2 3.966s-0.56 3.73-3.2 3.966z"></path>
-      </svg>
     ),
     key: "0",
   },
   {
     label: (
       <a rel="noopener noreferrer" href="#">
-        Cameras & Camcorders
+        Cases & Styluses
       </a>
     ),
-    icon: (
-      <svg viewBox="0 0 32 32">
-        <path d="M15.2 24c-3.97 0-7.2-3.23-7.2-7.2s3.23-7.2 7.2-7.2c3.97 0 7.2 3.23 7.2 7.2s-3.23 7.2-7.2 7.2zM15.2 11.2c-3.088 0-5.6 2.512-5.6 5.6s2.512 5.6 5.6 5.6 5.6-2.512 5.6-5.6-2.512-5.6-5.6-5.6zM28 28.8h-25.6c-1.323 0-2.4-1.077-2.4-2.4v-16c0-1.323 1.077-2.4 2.4-2.4h2.4c0.664 0 1.696-0.427 2.166-0.898l0.938-0.938c0.779-0.779 2.197-1.366 3.298-1.366h8c1.101 0 2.518 0.587 3.298 1.366l0.938 0.938c0.469 0.469 1.502 0.898 2.166 0.898h2.4c1.323 0 2.4 1.077 2.4 2.4v16c0 1.323-1.077 2.4-2.4 2.4zM2.4 9.6c-0.442 0-0.8 0.358-0.8 0.8v16c0 0.442 0.358 0.8 0.8 0.8h25.6c0.442 0 0.8-0.358 0.8-0.8v-16c0-0.442-0.358-0.8-0.8-0.8h-2.4c-1.101 0-2.518-0.587-3.298-1.366l-0.938-0.938c-0.469-0.469-1.502-0.898-2.166-0.898h-8c-0.664 0-1.696 0.427-2.166 0.898l-0.938 0.938c-0.779 0.779-2.195 1.366-3.298 1.366h-2.4z"></path>
-      </svg>
-    ),
+
     key: "1",
   },
   {
     label: (
       <a rel="noopener noreferrer" href="#">
-        iPad & Tablets
+        Chargers & Adapters
       </a>
     ),
-    icon: (
-      <svg viewBox="0 0 32 32">
-        <path d="M26.4 32h-20.8c-1.323 0-2.4-1.077-2.4-2.4v-27.2c0-1.323 1.077-2.4 2.4-2.4h20.8c1.323 0 2.4 1.077 2.4 2.4v27.2c0 1.323-1.077 2.4-2.4 2.4zM5.6 1.6c-0.442 0-0.8 0.358-0.8 0.8v27.2c0 0.442 0.358 0.8 0.8 0.8h20.8c0.442 0 0.8-0.358 0.8-0.8v-27.2c0-0.442-0.358-0.8-0.8-0.8h-20.8zM16.8 28.8h-1.6c-0.442 0-0.8-0.358-0.8-0.8s0.358-0.8 0.8-0.8h1.6c0.442 0 0.8 0.358 0.8 0.8s-0.358 0.8-0.8 0.8zM24.8 25.6h-17.6c-0.442 0-0.8-0.358-0.8-0.8v-20.8c0-0.442 0.358-0.8 0.8-0.8h17.6c0.442 0 0.8 0.358 0.8 0.8v20.8c0 0.442-0.358 0.8-0.8 0.8zM8 24h16v-19.2h-16v19.2z"></path>
-      </svg>
-    ),
+
     key: "2",
   },
   {
     label: (
       <a rel="noopener noreferrer" href="#">
-        Laptops & MacBooks
+        Headphones & Earbuds
       </a>
     ),
-    icon: (
-      <svg viewBox="0 0 32 32">
-        <path d="M5.6 22.4h20.8c1.323 0 2.4-1.077 2.4-2.4v-12.8c0-1.323-1.077-2.4-2.4-2.4h-20.8c-1.323 0-2.4 1.077-2.4 2.4v12.8c0 1.323 1.077 2.4 2.4 2.4zM4.8 7.2c0-0.442 0.358-0.8 0.8-0.8h20.8c0.442 0 0.8 0.358 0.8 0.8v12.8c0 0.442-0.358 0.8-0.8 0.8h-20.8c-0.442 0-0.8-0.358-0.8-0.8v-12.8zM31.2 24h-30.4c-0.442 0-0.8 0.358-0.8 0.8v1.6c0 1.323 1.077 2.4 2.4 2.4h27.2c1.323 0 2.4-1.077 2.4-2.4v-1.6c0-0.442-0.358-0.8-0.8-0.8zM29.6 27.2h-27.2c-0.442 0-0.8-0.358-0.8-0.8v-0.8h28.8v0.8c0 0.442-0.358 0.8-0.8 0.8z"></path>
-      </svg>
-    ),
+
     key: "3",
   },
   {
     label: (
       <a rel="noopener noreferrer" href="#">
-        Mobile Phones
+        Portable Speakers
       </a>
     ),
-    icon: (
-      <svg viewBox="0 0 32 32">
-        <path d="M16.8 28.8h-1.6c-0.442 0-0.8-0.358-0.8-0.8s0.358-0.8 0.8-0.8h1.6c0.442 0 0.8 0.358 0.8 0.8s-0.358 0.8-0.8 0.8zM23.2 32h-14.4c-1.323 0-2.4-1.077-2.4-2.4v-27.2c0-1.323 1.077-2.4 2.4-2.4h14.4c1.323 0 2.4 1.077 2.4 2.4v27.2c0 1.323-1.077 2.4-2.4 2.4zM8.8 1.6c-0.442 0-0.8 0.358-0.8 0.8v27.2c0 0.442 0.358 0.8 0.8 0.8h14.4c0.442 0 0.8-0.358 0.8-0.8v-27.2c0-0.442-0.358-0.8-0.8-0.8h-14.4zM21.6 25.6h-11.2c-0.442 0-0.8-0.358-0.8-0.8v-20.8c0-0.442 0.358-0.8 0.8-0.8h11.2c0.442 0 0.8 0.358 0.8 0.8v20.8c0 0.442-0.358 0.8-0.8 0.8zM11.2 24h9.6v-19.2h-9.6v19.2z"></path>
-      </svg>
-    ),
+
     key: "4",
   },
   {
     label: (
       <a rel="noopener noreferrer" href="#">
-        TVs & Appliances
+        Smartwatches
       </a>
     ),
-    icon: (
-      <svg viewBox="0 0 32 32">
-        <path d="M28 3.2h-25.6c-1.323 0-2.4 1.077-2.4 2.4v16c0 1.323 1.077 2.4 2.4 2.4h12v3.2h-5.6c-0.442 0-0.8 0.358-0.8 0.8s0.358 0.8 0.8 0.8h12.8c0.442 0 0.8-0.358 0.8-0.8s-0.358-0.8-0.8-0.8h-5.6v-3.2h12c1.323 0 2.4-1.077 2.4-2.4v-16c0-1.323-1.077-2.4-2.4-2.4zM28.8 21.6c0 0.442-0.358 0.8-0.8 0.8h-25.6c-0.442 0-0.8-0.358-0.8-0.8v-16c0-0.442 0.358-0.8 0.8-0.8h25.6c0.442 0 0.8 0.358 0.8 0.8v16z"></path>
-      </svg>
-    ),
+
     key: "5",
   },
 ];
@@ -148,52 +125,38 @@ const searchCategories: Category[] = [
   },
   {
     id: 2,
-    label: "Audio & Speakers",
-    value: "audio & speakers",
+    label: "Camera & Photo",
+    value: "camera & photo",
   },
   {
     id: 3,
-    label: "Beats",
-    value: "beats",
+    label: "Cases & Styluses",
+    value: "cases & styluses",
   },
   {
     id: 4,
-    label: "Cameras & Camcorders",
-    value: "cameras & camcorders",
+    label: "Chargers & Adapters",
+    value: "chargers & adapters",
   },
   {
     id: 5,
-    label: "IPad & Tablets",
-    value: "iPad & tablets",
+    label: "Headphones & Earbuds",
+    value: "headphones & earbuds",
   },
   {
     id: 6,
-    label: "Laptops & Macbooks",
-    value: "laptops & macbooks",
-  },
-  {
-    id: 5,
-    label: "Mobile phones",
-    value: "mobile phones",
-  },
-  {
-    id: 6,
-    label: "TVs & Appliances",
-    value: "tvs & appliances",
+    label: "Portable Speakers",
+    value: "portable speakers",
   },
   {
     id: 7,
-    label: "Air purifiers",
-    value: "air purifiers",
-  },
-  {
-    id: 8,
-    label: "Dishwashers",
-    value: "dishwashers",
+    label: "Smartwatches",
+    value: "smartwatches",
   },
 ];
 const Header = () => {
-  const { mobile, openSearch, toggleSearchDrawer } = useContext(MobileNavContext);
+  const { mobile, openSearch, toggleSearchDrawer } =
+    useContext(MobileNavContext);
 
   const { register, handleSubmit } = useForm<ISearchValues>({
     defaultValues: {
@@ -422,7 +385,7 @@ const Header = () => {
               >
                 <input
                   type="text"
-                  placeholder="Search for items and brands"
+                  placeholder="Search for items"
                   {...register("productName")}
                 />
                 <div className="categories-select">

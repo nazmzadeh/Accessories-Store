@@ -21,7 +21,7 @@ export interface ISearchValues {
 }
 
 export interface IHeroCarouselSlide {
-    id:number;
+    id: number;
     image: string;
     heading: string;
     beforeDescription: string;

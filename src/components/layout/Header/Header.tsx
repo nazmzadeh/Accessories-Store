@@ -6,14 +6,14 @@ import {
   TwitterOutlined,
   WhatsAppOutlined,
 } from "@ant-design/icons/lib/icons";
-import Menu, { IMenuItemProps } from "../../DropdownMenu/Menu";
+import Menu from "../../DropdownMenu/Menu";
 import "./Header.scss";
 import Navbar from "./components/Navbar";
 import { useContext } from "react";
 import { MobileNavContext } from "../../../context/ContextProvider";
 import SelectOption from "../../Select/Select";
 import { SubmitHandler, useForm } from "react-hook-form";
-import { Category, ISearchValues } from "../../../types";
+import { ISearchValues } from "../../../types";
 import { Button, Drawer } from "antd";
 import {
   categories,
@@ -21,8 +21,7 @@ import {
   languages,
   searchCategories,
 } from "../../../data/data";
-import { useDispatch, useSelector } from "react-redux";
-import { RootState } from "@reduxjs/toolkit/query";
+import { useDispatch } from "react-redux";
 
 // import data from "../../data/data.json";
 // import { categories, currencies } from '../../../data/data';

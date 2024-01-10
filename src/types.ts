@@ -14,6 +14,7 @@ export interface Category {
     id: number;
     value: string;
     label: string;
+    imageUrl?:string;
 }
 export interface ISearchValues {
     productName: string;

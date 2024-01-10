@@ -126,3 +126,20 @@
     }
   }
 }
+
+.categories-cards {
+  display: flex;
+  justify-content: space-between;
+  padding: 30px;
+  flex-wrap: wrap;
+  .card {
+    background-color: $main_bg_color;
+    min-width: calc((100% / 6) - 20px);
+    padding: 45px 20px;
+    text-align: center;
+    .card-title {
+      font-size: 18px;
+    }
+  }
+}
+

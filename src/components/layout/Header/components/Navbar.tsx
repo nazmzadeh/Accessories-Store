@@ -4,8 +4,9 @@ import { Button, Drawer, Menu } from "antd";
 import { useEffect, useState } from "react";
 import "./Navbar.scss";
 import { useContext } from "react";
-import { CloseOutlined, MenuOutlined, MobileOutlined } from "@ant-design/icons";
+import { MenuOutlined } from "@ant-design/icons";
 import { MobileNavContext } from "../../../../context/ContextProvider";
+import { categories } from "../../../../data/data";
 const items: MenuProps["items"] = [
   {
     label: (
@@ -21,20 +22,7 @@ const items: MenuProps["items"] = [
     children: [
       {
         type: "group",
-        children: [
-          {
-            label: "Option 1",
-            key: "setting:1",
-          },
-          {
-            label: "Option 2",
-            key: "setting:2",
-          },
-          {
-            label: "Option 3",
-            key: "setting:3",
-          },
-        ],
+        children: categories,
       },
     ],
   },
@@ -91,6 +79,16 @@ const Navbar = () => {
     window.addEventListener("resize", handleResize);
   }, []);
 
+  const updatedItems = items.map((item) => {
+    if (!mobile && item?.key === "shop") {
+      return {
+        ...item,
+        children: undefined,
+      };
+    }
+    return item;
+  });
+
   return (
     <div className="navbar-menu-container">
       {mobile ? (
@@ -106,7 +104,7 @@ const Navbar = () => {
               onClick={onClick}
               selectedKeys={[current]}
               mode="inline"
-              items={items}
+              items={updatedItems}
               className="navbar-menu navbar-menu-mobile"
             />
           </Drawer>
@@ -116,8 +114,8 @@ const Navbar = () => {
           onClick={onClick}
           selectedKeys={[current]}
           mode="horizontal"
-          items={items}
-          className="navbar-menu" 
+          items={updatedItems}
+          className="navbar-menu"
         />
       )}
     </div>

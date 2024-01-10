@@ -9,151 +9,25 @@ import {
 import Menu, { IMenuItemProps } from "../../DropdownMenu/Menu";
 import "./Header.scss";
 import Navbar from "./components/Navbar";
-import { useContext, useState } from "react";
+import { useContext } from "react";
 import { MobileNavContext } from "../../../context/ContextProvider";
 import SelectOption from "../../Select/Select";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { Category, ISearchValues } from "../../../types";
 import { Button, Drawer } from "antd";
+import {
+  categories,
+  currencies,
+  languages,
+  searchCategories,
+} from "../../../data/data";
+import { useDispatch, useSelector } from "react-redux";
+import { RootState } from "@reduxjs/toolkit/query";
+
 // import data from "../../data/data.json";
+// import { categories, currencies } from '../../../data/data';
 // const { categories, searchCategories, languages, currencies } = data;
 
-const currencies: IMenuItemProps[] = [
-  {
-    label: (
-      <a rel="noopener noreferrer" href="#">
-        USD
-      </a>
-    ),
-    key: "0",
-  },
-  {
-    label: (
-      <a rel="noopener noreferrer" href="#">
-        EUR
-      </a>
-    ),
-    key: "1",
-  },
-];
-const languages: IMenuItemProps[] = [
-  {
-    label: (
-      <a rel="noopener noreferrer" href="#">
-        English
-      </a>
-    ),
-    key: "0",
-  },
-  {
-    label: (
-      <a rel="noopener noreferrer" href="#">
-        Azerbaijani
-      </a>
-    ),
-    key: "1",
-  },
-  {
-    label: (
-      <a rel="noopener noreferrer" href="#">
-        Russian
-      </a>
-    ),
-    key: "2",
-  },
-];
-const categories: IMenuItemProps[] = [
-  {
-    label: (
-      <a rel="noopener noreferrer" href="#">
-        Camera & Photo
-      </a>
-    ),
-    key: "0",
-  },
-  {
-    label: (
-      <a rel="noopener noreferrer" href="#">
-        Cases & Styluses
-      </a>
-    ),
-
-    key: "1",
-  },
-  {
-    label: (
-      <a rel="noopener noreferrer" href="#">
-        Chargers & Adapters
-      </a>
-    ),
-
-    key: "2",
-  },
-  {
-    label: (
-      <a rel="noopener noreferrer" href="#">
-        Headphones & Earbuds
-      </a>
-    ),
-
-    key: "3",
-  },
-  {
-    label: (
-      <a rel="noopener noreferrer" href="#">
-        Portable Speakers
-      </a>
-    ),
-
-    key: "4",
-  },
-  {
-    label: (
-      <a rel="noopener noreferrer" href="#">
-        Smartwatches
-      </a>
-    ),
-
-    key: "5",
-  },
-];
-const searchCategories: Category[] = [
-  {
-    id: 1,
-    label: "All categories",
-    value: "all categories",
-  },
-  {
-    id: 2,
-    label: "Camera & Photo",
-    value: "camera & photo",
-  },
-  {
-    id: 3,
-    label: "Cases & Styluses",
-    value: "cases & styluses",
-  },
-  {
-    id: 4,
-    label: "Chargers & Adapters",
-    value: "chargers & adapters",
-  },
-  {
-    id: 5,
-    label: "Headphones & Earbuds",
-    value: "headphones & earbuds",
-  },
-  {
-    id: 6,
-    label: "Portable Speakers",
-    value: "portable speakers",
-  },
-  {
-    id: 7,
-    label: "Smartwatches",
-    value: "smartwatches",
-  },
-];
 const Header = () => {
   const { mobile, openSearch, toggleSearchDrawer } =
     useContext(MobileNavContext);
@@ -165,6 +39,8 @@ const Header = () => {
     },
   });
   const onSubmit: SubmitHandler<ISearchValues> = (data) => console.log(data);
+  const dispatch = useDispatch();
+  // const currencies=useSelector((state)=>state.currencies)
   return (
     <header>
       <div className="top-header">

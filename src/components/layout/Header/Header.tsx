@@ -21,7 +21,6 @@ import {
   languages,
   searchCategories,
 } from "../../../data/data";
-import { useDispatch } from "react-redux";
 
 // import data from "../../data/data.json";
 // import { categories, currencies } from '../../../data/data';

@@ -1,6 +1,5 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import { IMenuProps } from '../components/DropdownMenu/Menu';
-import { currencies } from '../data/data';
 import { PayloadAction, createSlice } from "@reduxjs/toolkit";
 
 const initialState: IMenuProps = {

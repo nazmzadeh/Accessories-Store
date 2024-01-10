@@ -38,7 +38,7 @@ const Header = () => {
     },
   });
   const onSubmit: SubmitHandler<ISearchValues> = (data) => console.log(data);
-  const dispatch = useDispatch();
+  // const dispatch = useDispatch();
   // const currencies=useSelector((state)=>state.currencies)
   return (
     <header>

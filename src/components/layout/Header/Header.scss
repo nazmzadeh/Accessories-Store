@@ -34,15 +34,15 @@
         background-color: #cdcdcd;
       }
     }
-    li {
-      display: inline;
-      padding: 0px 12px;
-      .social-icon {
-        color: $icon_color;
-        &:hover {
-          color: $main_text_color;
-        }
-      }
+  }
+}
+li {
+  display: inline;
+  padding: 0px 12px;
+  .social-icon {
+    color: $icon_color;
+    &:hover {
+      color: $main_text_color;
     }
   }
 }

@@ -1,0 +1,11 @@
+@import "../../../assets/variables";
+.footer {
+  background-color: $footer_bg;
+  padding: 35px 0px;
+  .row {
+    justify-content: space-between;
+    svg {
+      font-size: 22px;
+    }
+  }
+}

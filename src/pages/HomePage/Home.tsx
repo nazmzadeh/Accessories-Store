@@ -2,7 +2,7 @@
 import { Carousel } from "antd";
 import { heroCarousel, searchCategories } from "../../data/data";
 import Footer from "../../components/layout/Footer/Footer";
-import  Header  from "../../components/layout/Header/Header";
+import Header from "../../components/layout/Header/Header";
 import "./Home.scss";
 
 const Home = () => {

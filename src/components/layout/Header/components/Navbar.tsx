@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 import "./Navbar.scss";
 import { useContext } from "react";
 import { MenuOutlined } from "@ant-design/icons";
-import { MobileNavContext } from "../../../../context/ContextProvider";
+import { MobileNavContext } from "../../../../context/HeaderProvider";
 import { categories } from "../../../../data/data";
 const items: MenuProps["items"] = [
   {

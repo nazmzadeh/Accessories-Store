@@ -5,13 +5,14 @@ import {
   WhatsAppOutlined,
 } from "@ant-design/icons";
 import "../Footer/Footer.scss";
+import { Col, Row } from "antd";
 
 const Footer = () => {
   return (
     <div className="footer">
       <div className="container">
-        <div className="row">
-          <div className="footer-col">
+        <Row justify={"space-evenly"} className="footer-row">
+          <Col lg={6} md={12} xs={24} className="footer-col">
             <div className="logo">
               <a href="#">
                 <svg
@@ -50,10 +51,10 @@ const Footer = () => {
                 </a>
               </li>
             </ul>
-          </div>
-          <div className="footer-col">
-            <span>SUPPORT</span>
-            <div>
+          </Col>
+          <Col lg={6} md={12} xs={24} className="footer-col">
+            <span>Support</span>
+            <div className="footer-link">
               <div>
                 <a href="#">Contact Us</a>
               </div>
@@ -67,25 +68,41 @@ const Footer = () => {
                 <a href="#">Shipping & Returns</a>
               </div>
             </div>
-          </div>
-          <div className="footer-col">
-            <span>SHOP</span>
-            <div>
+          </Col>
+
+          <Col lg={6} md={12} xs={24} className="footer-col">
+            <span>Company</span>
+            <div className="footer-link">
               <div>
-                <a href="#">Contact Us</a>
+                <a href="#">Our Story</a>
               </div>
               <div>
-                <a href="#">FAQs</a>
+                <a href="#">Careers</a>
               </div>
               <div>
-                <a href="#">Size Guide</a>
+                <a href="#">Terms & Conditions</a>
               </div>
               <div>
-                <a href="#">Shipping & Returns</a>
+                <a href="#">Privacy & Cookie policy</a>
               </div>
             </div>
-          </div>
-        </div>
+          </Col>
+          <Col lg={6} md={12} xs={24} className="footer-col">
+            <span>Contact</span>
+            <div className="footer-link">
+              <div>
+                <a href="tel:1-888-923-8044">1-888-923-8044</a>
+              </div>
+              <div>
+                <a href="tel:1-888-923-8055">1-888-923-8055</a>
+              </div>
+              <div>
+                <a href="mailto:help@allbirds.com">help@allbirds.com</a>
+              </div>
+            </div>
+          </Col>
+        </Row>
+        <Row></Row>
       </div>
     </div>
   );

@@ -10,11 +10,15 @@ export type MobileNavContextState = {
     toggleNavDrawer: () => void;
     toggleSearchDrawer: () => void;
 }
+export type TabContextState = {
+    selectedTab: string;
+    setSelectedTab: Dispatch<SetStateAction<string>>;
+}
 export interface Category {
     id: number;
     value: string;
     label: string;
-    imageUrl?:string;
+    imageUrl?: string;
 }
 export interface ISearchValues {
     productName: string;
@@ -27,4 +31,28 @@ export interface IHeroCarouselSlide {
     heading: string;
     beforeDescription: string;
     description: string;
+}
+export interface ITitleProps {
+    text: string;
+}
+
+export interface ITabProps {
+    id: number;
+    value: string;
+    label: string;
+    onClick?: React.MouseEventHandler<HTMLButtonElement>;
+    className?: string;
+}
+export interface ITabsProps {
+    tabs: ITabProps[];
+}
+
+export interface IProductCardProps {
+    id: number;
+    imageUrl: string;
+    productTitle: string;
+    discount: boolean;
+    pricePrev?: string
+    price?: string;
+    category: Category;
 }

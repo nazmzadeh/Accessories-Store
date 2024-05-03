@@ -15,10 +15,10 @@ const ContextDefaultValues: MobileNavContextState = {
 export const MobileNavContext =
   createContext<MobileNavContextState>(ContextDefaultValues);
 
-interface IContextProviderProps {
+interface IHeaderContextProps {
   children: ReactNode;
 }
-const ContextProvider = ({ children }: IContextProviderProps) => {
+const HeaderProvider = ({ children }: IHeaderContextProps) => {
   const [mobile, setMobile] = useState<boolean>(ContextDefaultValues.mobile);
   const [openSearch, setOpenSearch] = useState<boolean>(
     ContextDefaultValues.openSearch
@@ -39,7 +39,7 @@ const ContextProvider = ({ children }: IContextProviderProps) => {
     openNav,
     setOpenNav,
     toggleNavDrawer,
-    toggleSearchDrawer
+    toggleSearchDrawer,
   };
   return (
     <MobileNavContext.Provider value={values}>
@@ -48,4 +48,4 @@ const ContextProvider = ({ children }: IContextProviderProps) => {
   );
 };
 
-export default ContextProvider;
+export default HeaderProvider;

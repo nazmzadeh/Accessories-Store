@@ -1,11 +1,27 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
-import { Carousel } from "antd";
-import { heroCarousel, searchCategories } from "../../data/data";
+import { Carousel, Row } from "antd";
+import { heroCarousel, productCards, searchCategories } from "../../data/data";
 import Footer from "../../components/layout/Footer/Footer";
 import Header from "../../components/layout/Header/Header";
 import "./Home.scss";
+import Title from "../../components/Title/Title";
+import Tabs from "../../components/Tabs/Tabs";
+import ProductCard from "../../components/ProductCard/ProductCard";
+import { useContext, useEffect, useState } from "react";
+import { IProductCardProps } from "../../types";
+import { TabsContext } from "../../context/TabsProvider";
 
 const Home = () => {
+  const [products, setProducts] = useState<IProductCardProps[]>([]);
+  const { setSelectedTab, selectedTab } = useContext(TabsContext);
+  const filteredProducts =
+    selectedTab === "All"
+      ? products
+      : products.filter((product) => product.category.label === selectedTab);
+  console.log(filteredProducts);
+  useEffect(() => {
+    setProducts();
+  });
   return (
     <>
       <Header />
@@ -68,6 +84,24 @@ const Home = () => {
               </div>
             </div>
           ))}
+        </div>
+      </section>
+      <section id="products">
+        <div className="container">
+          <Title text={"Top month Sellers"} />
+          <Tabs tabs={searchCategories} />
+          <Row className="product-cards">
+            {filteredProducts.map((p) => (
+              <ProductCard
+                key={p.id}
+                id={p.id}
+                imageUrl={p.imageUrl}
+                productTitle={p.productTitle}
+                discount={p.discount}
+                category={p.category}
+              />
+            ))}
+          </Row>
         </div>
       </section>
       <Footer />

@@ -1,0 +1,10 @@
+@import "../../assets/variables";
+.section-title {
+  text-align: center;
+  h2 {
+    color: $main_text_color;
+    font-size: 36px;
+    font-weight: 500;
+    line-height: 48px;
+  }
+}

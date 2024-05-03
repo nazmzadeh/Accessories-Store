@@ -10,7 +10,7 @@ import Menu from "../../DropdownMenu/Menu";
 import "./Header.scss";
 import Navbar from "./components/Navbar";
 import { useContext } from "react";
-import { MobileNavContext } from "../../../context/ContextProvider";
+import { MobileNavContext } from "../../../context/HeaderProvider";
 import SelectOption from "../../Select/Select";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { ISearchValues } from "../../../types";

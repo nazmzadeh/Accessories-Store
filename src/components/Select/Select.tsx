@@ -15,7 +15,6 @@ interface ISelectProps {
 const { Option: AntdOption } = Select;
 
 const SelectOption = ({ items, onSelectChange }: ISelectProps) => {
-  console.log(items[0].value);
   return (
     <>
       <Select

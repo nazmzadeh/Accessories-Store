@@ -1,0 +1,10 @@
+.product-cards {
+  gap: 8px;
+  .product-card {
+    max-width: 25%;
+    .product-title {
+      overflow: visible;
+      white-space: none;
+    }
+  }
+}

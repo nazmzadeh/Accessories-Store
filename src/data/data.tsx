@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
-import { Category, IHeroCarouselSlide } from "../types";
+import { Category, IHeroCarouselSlide, IProductCardProps } from "../types";
 import { IMenuItemProps } from "../components/DropdownMenu/Menu";
 import categoryImg1 from "../pages/HomePage/images/home-accessories-cat1.png";
 import categoryImg2 from "../pages/HomePage/images/home-accessories-cat2.png";
@@ -9,6 +9,10 @@ import categoryImg5 from "../pages/HomePage/images/home-accessories-cat5.png";
 import categoryImg6 from "../pages/HomePage/images/home-accessories-cat6.png";
 import carouselImage1 from "../pages/HomePage/images/home-accessories-slider1-scaled-1.jpg";
 import carouselImage2 from "../pages/HomePage/images/home-accessories-slider2-scaled-1.jpg";
+import productImg1 from "../pages/HomePage/images/product-image1.png";
+import productImg2 from "../pages/HomePage/images/product-image2.png";
+import productImg3 from "../pages/HomePage/images/product-image3.png";
+
 export const currencies: IMenuItemProps[] = [
   {
     label: (
@@ -49,7 +53,6 @@ export const languages: IMenuItemProps[] = [
       <a rel="noopener noreferrer" href="#">
         Russian
       </a>
-      
     ),
     key: "2",
   },
@@ -109,7 +112,7 @@ export const categories: IMenuItemProps[] = [
 export const searchCategories: Category[] = [
   {
     id: 1,
-    label: "All categories",
+    label: "All",
     value: "all categories",
   },
   {
@@ -165,5 +168,33 @@ export const heroCarousel: IHeroCarouselSlide[] = [
     beforeDescription: "Charger Aluminum Pad & Watch Charger Station",
     description:
       "Appear, dry there darkness they're seas, dry waters thing fly midst above. ",
+  },
+];
+
+export const productCards: IProductCardProps[] = [
+  {
+    id: 1,
+    imageUrl: productImg1,
+    productTitle: "15W Magnetic Wireless iPhone Charger",
+    discount: true,
+    pricePrev: "139.00",
+    price: "69.00",
+    category: searchCategories[3],
+  },
+  {
+    id: 2,
+    imageUrl: productImg2,
+    productTitle: "45W USB-C Super Fast Charging Wall Charger",
+    discount: false,
+    price: "29.00",
+    category: searchCategories[3],
+  },
+  {
+    id: 3,
+    imageUrl: productImg3,
+    productTitle: "Air True Wireless Signature Bluetooth Earbuds",
+    discount: false,
+    price: "19.00",
+    category: searchCategories[4],
   },
 ];

@@ -7,21 +7,19 @@ import "./Home.scss";
 import Title from "../../components/Title/Title";
 import Tabs from "../../components/Tabs/Tabs";
 import ProductCard from "../../components/ProductCard/ProductCard";
-import { useContext, useEffect, useState } from "react";
-import { IProductCardProps } from "../../types";
-import { TabsContext } from "../../context/TabsProvider";
+import { useState } from "react";
 
 const Home = () => {
-  const [products, setProducts] = useState<IProductCardProps[]>([]);
-  const { setSelectedTab, selectedTab } = useContext(TabsContext);
-  const filteredProducts =
-    selectedTab === "All"
-      ? products
-      : products.filter((product) => product.category.label === selectedTab);
-  console.log(filteredProducts);
-  useEffect(() => {
-    setProducts();
-  });
+  const [selectedTab, setSelectedTab] = useState(searchCategories[0].label);
+  const filteredItems =
+    selectedTab === searchCategories[0].label
+      ? productCards
+      : productCards.filter(
+          (product) => product.category.label === selectedTab
+        );
+  const handleTabChange = (tab: string) => {
+    setSelectedTab(tab);
+  };
   return (
     <>
       <Header />
@@ -89,9 +87,16 @@ const Home = () => {
       <section id="products">
         <div className="container">
           <Title text={"Top month Sellers"} />
-          <Tabs tabs={searchCategories} />
+          <div className="tabs">
+            <Tabs
+              tabs={searchCategories}
+              handleTabChange={handleTabChange}
+              selectedTab={selectedTab}
+            />
+          </div>
+
           <Row className="product-cards">
-            {filteredProducts.map((p) => (
+            {filteredItems.map((p) => (
               <ProductCard
                 key={p.id}
                 id={p.id}

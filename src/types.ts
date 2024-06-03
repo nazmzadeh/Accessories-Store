@@ -10,10 +10,7 @@ export type MobileNavContextState = {
     toggleNavDrawer: () => void;
     toggleSearchDrawer: () => void;
 }
-export type TabContextState = {
-    selectedTab: string;
-    setSelectedTab: Dispatch<SetStateAction<string>>;
-}
+
 export interface Category {
     id: number;
     value: string;
@@ -45,6 +42,9 @@ export interface ITabProps {
 }
 export interface ITabsProps {
     tabs: ITabProps[];
+    handleTabChange: (x: string) => void;
+    selectedTab: string;
+
 }
 
 export interface IProductCardProps {

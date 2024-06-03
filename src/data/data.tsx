@@ -12,6 +12,9 @@ import carouselImage2 from "../pages/HomePage/images/home-accessories-slider2-sc
 import productImg1 from "../pages/HomePage/images/product-image1.png";
 import productImg2 from "../pages/HomePage/images/product-image2.png";
 import productImg3 from "../pages/HomePage/images/product-image3.png";
+import productImg4 from "../pages/HomePage/images/product-image4.png";
+import productImg5 from "../pages/HomePage/images/product-image5.png";
+import productImg6 from "../pages/HomePage/images/product-image6.png";
 
 export const currencies: IMenuItemProps[] = [
   {
@@ -196,5 +199,29 @@ export const productCards: IProductCardProps[] = [
     discount: false,
     price: "19.00",
     category: searchCategories[4],
+  },
+  {
+    id: 4,
+    imageUrl: productImg4,
+    productTitle: "Smart Watch w/ Blue Aluminum Case",
+    discount: false,
+    price: "559.00",
+    category: searchCategories[6],
+  },
+  {
+    id: 5,
+    imageUrl: productImg5,
+    productTitle: "Belkin TrueFreedom Pro Wireless Charging",
+    discount: false,
+    price: "169.00",
+    category: searchCategories[1],
+  },
+  {
+    id: 6,
+    imageUrl: productImg6,
+    productTitle: "Aluminum Phone Desk Stand for iPhone & Android",
+    discount: false,
+    price: "99.00",
+    category: searchCategories[2],
   },
 ];

@@ -1,4 +1,8 @@
 @import "../../assets/variables";
 .selected-tab {
   color: $selected_color;
+  background-color: transparent;
+}
+.tab {
+  background-color: transparent;
 }

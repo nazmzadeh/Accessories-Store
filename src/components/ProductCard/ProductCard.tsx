@@ -8,15 +8,10 @@ const ProductCard = (props: IProductCardProps) => {
   return (
     <>
       <Card
-        cover={
-          <img
-            alt="example"
-            src={props.imageUrl}
-          />
-        }
+        cover={<img alt="example" src={props.imageUrl} />}
         className="product-card"
       >
-        <Meta title={props.productTitle} className="product-title"  />
+        <Meta title={props.productTitle} className="product-title" />
         <button>Add to cart</button>
       </Card>
     </>

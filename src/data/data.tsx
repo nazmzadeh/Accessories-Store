@@ -15,6 +15,7 @@ import productImg3 from "../pages/HomePage/images/product-image3.png";
 import productImg4 from "../pages/HomePage/images/product-image4.png";
 import productImg5 from "../pages/HomePage/images/product-image5.png";
 import productImg6 from "../pages/HomePage/images/product-image6.png";
+import productImg7 from "../pages/HomePage/images/product-image7.png";
 
 export const currencies: IMenuItemProps[] = [
   {
@@ -180,7 +181,7 @@ export const productCards: IProductCardProps[] = [
     imageUrl: productImg1,
     productTitle: "15W Magnetic Wireless iPhone Charger",
     discount: true,
-    pricePrev: "139.00",
+    priceOriginal: "139.00",
     price: "69.00",
     category: searchCategories[3],
   },
@@ -223,5 +224,14 @@ export const productCards: IProductCardProps[] = [
     discount: false,
     price: "99.00",
     category: searchCategories[2],
+  },
+  {
+    id: 7,
+    imageUrl: productImg7,
+    productTitle: "Amazon Echo Dot Speake",
+    discount: true,
+    priceOriginal: "120.00",
+    price: "99.00",
+    category: searchCategories[5],
   },
 ];

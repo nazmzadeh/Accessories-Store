@@ -1,18 +1,41 @@
 import { Card } from "antd";
 import Meta from "antd/es/card/Meta";
-import React from "react";
+// import React, { useState } from "react";
 import "./ProductCard.scss";
 import { IProductCardProps } from "../../types";
+import Button from "../Button/Button";
 
 const ProductCard = (props: IProductCardProps) => {
   return (
     <>
       <Card
-        cover={<img alt="example" src={props.imageUrl} />}
+        cover={
+          <a href="#">
+            <img alt="card" className="product-card-img" src={props.imageUrl} />
+          </a>
+        }
         className="product-card"
       >
-        <Meta title={props.productTitle} className="product-title" />
-        <button>Add to cart</button>
+        <p>
+          {props.discount ? (
+            <>
+              <span className="price original-price">
+                ${props.priceOriginal}
+              </span>
+              <span className="price price-on-discount">
+                &nbsp; ${props.price}
+              </span>
+            </>
+          ) : (
+            <span className="price">${props.price}</span>
+          )}
+        </p>
+        <a href="#">
+          <Meta title={props.productTitle} className="product-title" />
+        </a>
+        <div className="btn-container">
+          <Button text={"Add to cart"}></Button>
+        </div>
       </Card>
     </>
   );

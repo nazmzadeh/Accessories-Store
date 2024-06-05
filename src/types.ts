@@ -52,7 +52,11 @@ export interface IProductCardProps {
     imageUrl: string;
     productTitle: string;
     discount: boolean;
-    pricePrev?: string
+    priceOriginal?: string
     price?: string;
     category: Category;
+}
+
+export interface IButtonProps {
+    text: string;
 }

@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
-import { Carousel, Row } from "antd";
+import { Carousel, Col, Row } from "antd";
 import { heroCarousel, productCards, searchCategories } from "../../data/data";
 import Footer from "../../components/layout/Footer/Footer";
 import Header from "../../components/layout/Header/Header";
@@ -17,9 +17,11 @@ const Home = () => {
       : productCards.filter(
           (product) => product.category.label === selectedTab
         );
+
   const handleTabChange = (tab: string) => {
     setSelectedTab(tab);
   };
+
   return (
     <>
       <Header />
@@ -97,16 +99,22 @@ const Home = () => {
 
           <Row className="product-cards">
             {filteredItems.map((p) => (
-              <ProductCard
-                key={p.id}
-                id={p.id}
-                imageUrl={p.imageUrl}
-                productTitle={p.productTitle}
-                discount={p.discount}
-                category={p.category}
-              />
+              <Col className="product-col" sm={24} md={7} xl={5} key={p.id}>
+                <ProductCard
+                  id={p.id}
+                  imageUrl={p.imageUrl}
+                  productTitle={p.productTitle}
+                  discount={p.discount}
+                  category={p.category}
+                  price={p.price}
+                  priceOriginal={p.priceOriginal}
+                />
+              </Col>
             ))}
           </Row>
+          <div className="discover-more">
+            <button>Discover More</button>
+          </div>
         </div>
       </section>
       <Footer />

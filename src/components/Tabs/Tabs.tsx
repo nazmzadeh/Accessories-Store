@@ -15,7 +15,7 @@ const Tabs = (props: ITabsProps) => {
           onClick={() => {
             props.handleTabChange(t.label);
           }}
-          className={t.label === props.selectedTab ? "selected-tab" : "tab"}
+          className={t.label === props.selectedTab ? "tab selected-tab" : "tab"}
         />
       ))}
     </>

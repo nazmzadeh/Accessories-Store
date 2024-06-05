@@ -1,0 +1,24 @@
+@import "../../assets/variables";
+
+.product-btn {
+  font-size: 16px;
+  padding: 13px 34px;
+  background-color: $secondary_color;
+  width: 177px;
+
+  &:hover {
+    a {
+      gap: 15px;
+    }
+  }
+  a {
+    color: $main_text_color;
+    display: flex;
+    justify-content: center;
+    gap: 9px;
+    transition: all 0.3s linear;
+    &:hover {
+      opacity: 1;
+    }
+  }
+}

@@ -1,6 +1,5 @@
 import { Card } from "antd";
 import Meta from "antd/es/card/Meta";
-// import React, { useState } from "react";
 import "./ProductCard.scss";
 import { IProductCardProps } from "../../types";
 import Button from "../Button/Button";

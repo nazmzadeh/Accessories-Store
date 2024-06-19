@@ -17,102 +17,6 @@ import productImg5 from "../pages/HomePage/images/product-image5.png";
 import productImg6 from "../pages/HomePage/images/product-image6.png";
 import productImg7 from "../pages/HomePage/images/product-image7.png";
 
-export const currencies: IMenuItemProps[] = [
-  {
-    label: (
-      <a rel="noopener noreferrer" href="#">
-        USD
-      </a>
-    ),
-    key: "0",
-  },
-  {
-    label: (
-      <a rel="noopener noreferrer" href="#">
-        EUR
-      </a>
-    ),
-    key: "1",
-  },
-];
-export const languages: IMenuItemProps[] = [
-  {
-    label: (
-      <a rel="noopener noreferrer" href="#">
-        English
-      </a>
-    ),
-    key: "0",
-  },
-  {
-    label: (
-      <a rel="noopener noreferrer" href="#">
-        Azerbaijani
-      </a>
-    ),
-    key: "1",
-  },
-  {
-    label: (
-      <a rel="noopener noreferrer" href="#">
-        Russian
-      </a>
-    ),
-    key: "2",
-  },
-];
-
-export const categories: IMenuItemProps[] = [
-  {
-    label: (
-      <a rel="noopener noreferrer" href="#">
-        Camera & Photo
-      </a>
-    ),
-    key: "0",
-  },
-  {
-    label: (
-      <a rel="noopener noreferrer" href="#">
-        Cases & Styluses
-      </a>
-    ),
-    key: "1",
-  },
-  {
-    label: (
-      <a rel="noopener noreferrer" href="#">
-        Chargers & Adapters
-      </a>
-    ),
-    key: "2",
-  },
-  {
-    label: (
-      <a rel="noopener noreferrer" href="#">
-        Headphones & Earbuds
-      </a>
-    ),
-    key: "3",
-  },
-  {
-    label: (
-      <a rel="noopener noreferrer" href="#">
-        Portable Speakers
-      </a>
-    ),
-    key: "4",
-  },
-  {
-    label: (
-      <a rel="noopener noreferrer" href="#">
-        Smartwatches
-      </a>
-    ),
-    key: "5",
-  },
-];
-
 export const searchCategories: Category[] = [
   {
     id: 1,
@@ -233,5 +137,100 @@ export const productCards: IProductCardProps[] = [
     priceOriginal: "120.00",
     price: "99.00",
     category: searchCategories[5],
+  },
+];
+export const currencies: IMenuItemProps[] = [
+  {
+    label: (
+      <a rel="noopener noreferrer" href="#">
+        USD
+      </a>
+    ),
+    key: "0",
+  },
+  {
+    label: (
+      <a rel="noopener noreferrer" href="#">
+        EUR
+      </a>
+    ),
+    key: "1",
+  },
+];
+export const languages: IMenuItemProps[] = [
+  {
+    label: (
+      <a rel="noopener noreferrer" href="#">
+        English
+      </a>
+    ),
+    key: "0",
+  },
+  {
+    label: (
+      <a rel="noopener noreferrer" href="#">
+        Azerbaijani
+      </a>
+    ),
+    key: "1",
+  },
+  {
+    label: (
+      <a rel="noopener noreferrer" href="#">
+        Russian
+      </a>
+    ),
+    key: "2",
+  },
+];
+
+export const categories: IMenuItemProps[] = [
+  {
+    label: (
+      <a rel="noopener noreferrer" href="#">
+        Camera & Photo
+      </a>
+    ),
+    key: "0",
+  },
+  {
+    label: (
+      <a rel="noopener noreferrer" href="#">
+        Cases & Styluses
+      </a>
+    ),
+    key: "1",
+  },
+  {
+    label: (
+      <a rel="noopener noreferrer" href="#">
+        Chargers & Adapters
+      </a>
+    ),
+    key: "2",
+  },
+  {
+    label: (
+      <a rel="noopener noreferrer" href="#">
+        Headphones & Earbuds
+      </a>
+    ),
+    key: "3",
+  },
+  {
+    label: (
+      <a rel="noopener noreferrer" href="#">
+        Portable Speakers
+      </a>
+    ),
+    key: "4",
+  },
+  {
+    label: (
+      <a rel="noopener noreferrer" href="#">
+        Smartwatches
+      </a>
+    ),
+    key: "5",
   },
 ];

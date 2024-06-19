@@ -9,7 +9,7 @@ import {
 import Menu from "../../DropdownMenu/Menu";
 import "./Header.scss";
 import Navbar from "./components/Navbar";
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { MobileNavContext } from "../../../context/HeaderProvider";
 import SelectOption from "../../Select/Select";
 import { SubmitHandler, useForm } from "react-hook-form";
@@ -21,10 +21,9 @@ import {
   languages,
   searchCategories,
 } from "../../../data/data";
-
-// import data from "../../data/data.json";
-// import { categories, currencies } from '../../../data/data';
-// const { categories, searchCategories, languages, currencies } = data;
+import { useAppDispatch, useAppSelector } from "../../../app/hooks";
+import { setCurrenciesList } from "../../../features/currenciesSlice";
+import { setLanguagesList } from "../../../features/languagesSlice";
 
 const Header = () => {
   const { mobile, openSearch, toggleSearchDrawer } =
@@ -36,9 +35,16 @@ const Header = () => {
       category: { value: searchCategories[0].value },
     },
   });
+
   const onSubmit: SubmitHandler<ISearchValues> = (data) => console.log(data);
-  // const dispatch = useDispatch();
-  // const currencies=useSelector((state)=>state.currencies)
+  const dispatch = useAppDispatch();
+  const currenciesList = useAppSelector((state) => state.currencies.items);
+  const languagesList = useAppSelector((state) => state.languages.items);
+  useEffect(() => {
+    dispatch(setCurrenciesList(currencies));
+    dispatch(setLanguagesList(languages));
+  }, [dispatch]);
+
   return (
     <header>
       <div className="top-header">
@@ -66,8 +72,11 @@ const Header = () => {
                 <span>FREE SHIPPING OVER $100</span>
               </span>
               <div className="dropdowns">
-                <Menu items={currencies} className="dropdown-menu currencies" />
-                <Menu items={languages} className="dropdown-menu" />
+                <Menu
+                  items={currenciesList}
+                  className="dropdown-menu currencies"
+                />
+                <Menu items={languagesList} className="dropdown-menu" />
               </div>
             </div>
             <div>

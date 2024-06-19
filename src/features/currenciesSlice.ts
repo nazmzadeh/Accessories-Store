@@ -1,18 +1,21 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
-import { IMenuProps } from '../components/DropdownMenu/Menu';
+import { IMenuItemProps, IMenuProps } from '../components/DropdownMenu/Menu';
 import { PayloadAction, createSlice } from "@reduxjs/toolkit";
+
 
 const initialState: IMenuProps = {
     items: []
+
 }
 
 const currencySlice = createSlice({
-    name: 'currency',
+    name: 'currencies',
     initialState,
     reducers: {
-        setCurrenciesList: (state, action: PayloadAction<IMenuProps>) => {
-            state.items = action.payload.items
-        }
+        setCurrenciesList: (state, action: PayloadAction<IMenuItemProps[]>) => {
+            state.items = action.payload
+        },
+
     }
 })
 export const { setCurrenciesList } = currencySlice.actions;

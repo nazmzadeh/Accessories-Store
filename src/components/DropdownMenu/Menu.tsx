@@ -6,7 +6,7 @@ import { Dropdown, Space } from "antd";
 import "./Menu.scss";
 
 export interface IMenuItemProps {
-  label: React.ReactNode;
+  label?: React.ReactNode;
   key: string;
   icon?: React.ReactNode;
 }
@@ -17,6 +17,10 @@ export interface IMenuProps {
   title?: React.ReactNode;
 }
 const Menu = ({ items, className, title }: IMenuProps) => {
+  const hasItems = items && items.length > 0;
+  const firstItemLabel = hasItems
+    ? (items[0].label as React.ReactElement).props.children
+    : null;
   return (
     <Dropdown
       menu={{ items }}
@@ -24,7 +28,7 @@ const Menu = ({ items, className, title }: IMenuProps) => {
       trigger={["hover"]}
     >
       <Space>
-        {title ? title : (items[0].label as React.ReactElement).props.children}
+        {title ? title : firstItemLabel}
         <DownOutlined className="down-arrow" />
       </Space>
     </Dropdown>

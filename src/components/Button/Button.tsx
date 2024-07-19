@@ -3,10 +3,8 @@ import { IButtonProps } from "../../types";
 
 const Button = (props: IButtonProps) => {
   return (
-    <button className="product-btn">
-      <a href="#">
-        <span>{props.text}</span>
-      </a>
+    <button className="product-btn" onClick={props.onClick}>
+      <span>{props.text}</span>
     </button>
   );
 };

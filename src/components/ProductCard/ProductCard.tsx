@@ -3,8 +3,12 @@ import Meta from "antd/es/card/Meta";
 import "./ProductCard.scss";
 import { IProductCardProps } from "../../types";
 import Button from "../Button/Button";
+import { useAppDispatch } from "../../app/hooks";
+import { addToCart } from "../../features/cartItemsSlice";
 
 const ProductCard = (props: IProductCardProps) => {
+  const dispatch = useAppDispatch();
+
   return (
     <>
       <Card
@@ -33,7 +37,18 @@ const ProductCard = (props: IProductCardProps) => {
           <Meta title={props.productTitle} className="product-title" />
         </a>
         <div className="btn-container">
-          <Button text={"Add to cart"}></Button>
+          <Button
+            onClick={() =>
+              dispatch(
+                addToCart({
+                  id: props.id,
+                  name: props.productTitle,
+                  quantity: 1,
+                })
+              )
+            }
+            text={"Add to cart"}
+          ></Button>
         </div>
       </Card>
     </>

@@ -71,6 +71,23 @@ li {
   .nav-right {
     display: flex;
     gap: 15px;
+    .cart {
+      position: relative;
+
+      .cart-items-quantity {
+        position: absolute;
+        bottom: 0;
+        background-color: $main_text_color;
+        color: white;
+        border-radius: 50%;
+        right: -3px;
+        border-radius: 50%;
+        width: 14px;
+        height: 16px;
+        font-size: 11px;
+        text-align: center;
+      }
+    }
   }
   button.drawer-btn {
     padding: 0;

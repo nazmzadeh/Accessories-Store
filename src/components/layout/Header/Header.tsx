@@ -28,7 +28,6 @@ import { setLanguagesList } from "../../../features/languagesSlice";
 const Header = () => {
   const { mobile, openSearch, toggleSearchDrawer } =
     useContext(MobileNavContext);
-
   const { register, handleSubmit } = useForm<ISearchValues>({
     defaultValues: {
       productName: "",
@@ -40,10 +39,22 @@ const Header = () => {
   const dispatch = useAppDispatch();
   const currenciesList = useAppSelector((state) => state.currencies.items);
   const languagesList = useAppSelector((state) => state.languages.items);
+  const cartList = useAppSelector((state) => state.cart.items);
   useEffect(() => {
     dispatch(setCurrenciesList(currencies));
     dispatch(setLanguagesList(languages));
   }, [dispatch]);
+
+  const showCart = () => {
+    console.log(cartList);
+  };
+  function getCartItemsQuantity() {
+    let sum = 0;
+    cartList.map((item) => {
+      sum += item.quantity;
+    });
+    return sum;
+  }
 
   return (
     <header>
@@ -205,7 +216,7 @@ const Header = () => {
                 </a>
               </li>
               <li>
-                <a href="#">
+                <a href="#" className="cart" onClick={showCart}>
                   <svg
                     aria-hidden="true"
                     role="img"
@@ -225,6 +236,9 @@ const Header = () => {
                       fill="currentColor"
                     ></path>{" "}
                   </svg>{" "}
+                  <span className="cart-items-quantity">
+                    {getCartItemsQuantity()}
+                  </span>
                 </a>
               </li>
             </ul>

@@ -55,8 +55,21 @@ export interface IProductCardProps {
     priceOriginal?: string
     price?: string;
     category: Category;
+
 }
 
 export interface IButtonProps {
     text: string;
+    onClick: React.MouseEventHandler<HTMLButtonElement>
 }
+
+export interface ICartItemState {
+
+    id: number;
+    name: string;
+    quantity: number;
+}
+export interface ICartState {
+    items: ICartItemState[]
+}
+
